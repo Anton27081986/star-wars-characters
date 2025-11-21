@@ -1,6 +1,6 @@
 Star Wars Characters — SPA на Angular 21
 
-Одностраничное приложение (SPA) для просмотра персонажей вселенной Star Wars.
+Двухстраничное приложение (SPA) для просмотра персонажей вселенной Star Wars.
 Реализовано на Angular 21 с использованием Angular Material, Signals, локального состояния и публичного API SWAPI.
 
 Проект выполнен в рамках тестового задания.
@@ -107,7 +107,7 @@ ng deploy
 
 После деплоя приложение станет доступно по адресу:
 
-https://<YOUR_USERNAME>.github.io/star-wars-characters/
+https://anton27081986.github.io/star-wars-characters/
 
 Особенности реализации
 
