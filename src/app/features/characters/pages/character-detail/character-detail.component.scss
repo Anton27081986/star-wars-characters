@@ -1,0 +1,27 @@
+.detail-card {
+  padding: 10px;
+  background-color: #e1e1e1;
+}
+
+.title-text {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.detail-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+

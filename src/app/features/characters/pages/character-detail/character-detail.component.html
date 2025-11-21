@@ -1,0 +1,52 @@
+<mat-card class="detail-card">
+  <mat-card-title class="title-text"> Редактирование персонажа </mat-card-title>
+
+  <mat-card-content>
+    <form class="form">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Введите новое имя</mat-label>
+        <input matInput [formControl]="nameControl" />
+        @if (nameControl.hasError('required') && nameControl.invalid) {
+          <mat-error>Имя обязательно для заполнения</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Введите новый рост</mat-label>
+        <input matInput [formControl]="heightControl" />
+        @if (heightControl.hasError('required') && heightControl.invalid) {
+          <mat-error>Рост обязателен для заполнения</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Введите новый вес</mat-label>
+        <input matInput [formControl]="massControl" />
+        @if (massControl.hasError('required') && massControl.invalid) {
+          <mat-error>Вес обязателен для заполнения</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Введите новый пол</mat-label>
+        <input matInput [formControl]="genderControl" />
+        @if (genderControl.hasError('required') && genderControl.invalid) {
+          <mat-error>Пол обязателен для заполнения</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Введите новый год рождения</mat-label>
+        <input matInput [formControl]="birthYearControl" />
+        @if (birthYearControl.hasError('required') && birthYearControl.invalid) {
+          <mat-error>Год рождения обязателен для заполнения</mat-error>
+        }
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions class="detail-card-actions">
+    <button mat-stroked-button (click)="back()">Назад</button>
+    <button mat-stroked-button (click)="save()">Сохранить</button>
+  </mat-card-actions>
+</mat-card>

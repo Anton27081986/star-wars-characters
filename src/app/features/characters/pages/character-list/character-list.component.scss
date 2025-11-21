@@ -1,0 +1,77 @@
+.list-search {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.search-field {
+  width: 320px;
+  max-width: 100%;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.cards-container {
+  display: grid;
+  gap: 20px;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  mat-card:nth-child(9) {
+    grid-column: 2;
+  }
+  mat-card:nth-child(10) {
+    grid-column: 3;
+  }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+
+    mat-card:nth-child(9),
+    mat-card:nth-child(10) {
+      grid-column: auto;
+    }
+
+    mat-card:nth-child(10) {
+      grid-column: 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+
+    mat-card:nth-child(10) {
+      grid-column: auto;
+    }
+  }
+}
+
+.character-card {
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #e1e1e1;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.character-card-title {
+  text-align: center;
+  font-weight: 500;
+}
+
+.paginator-container {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}

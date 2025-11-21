@@ -1,0 +1,43 @@
+<section class="list-search">
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Поиск по имени</mat-label>
+    <input matInput [formControl]="searchControl" placeholder="Например, Luke Skywalker" />
+  </mat-form-field>
+</section>
+
+@if (isLoading()) {
+  <section class="spinner-container">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </section>
+} @else {
+  <div class="cards-container">
+    @for (person of people(); track person.url) {
+      <mat-card class="character-card" (click)="openDetail(person)">
+        <mat-card-title class="character-card-title">{{ person.name }}</mat-card-title>
+
+        <mat-card-content>
+          <div>Рост: {{ person.height }}</div>
+          <div>Вес: {{ person.mass }}</div>
+          <div>Пол: {{ person.gender }}</div>
+          <div>Год рождения: {{ person.birth_year }}</div>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button mat-button color="primary">Подробнее</button>
+        </mat-card-actions>
+      </mat-card>
+    }
+  </div>
+
+  @if (total() > pageSize) {
+    <section class="paginator-container">
+      <mat-paginator
+        [length]="total()"
+        [pageSize]="pageSize"
+        [pageIndex]="pageIndex()"
+        [pageSizeOptions]="[10]"
+        (page)="onPageChange($event)"
+      />
+    </section>
+  }
+}
