@@ -1,59 +1,126 @@
-# StarWarsCharacters
+Star Wars Characters — SPA на Angular 21
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
+Одностраничное приложение (SPA) для просмотра персонажей вселенной Star Wars.
+Реализовано на Angular 21 с использованием Angular Material, Signals, локального состояния и публичного API SWAPI.
 
-## Development server
+Проект выполнен в рамках тестового задания.
 
-To start a local development server, run:
+Функционал
+Список персонажей
 
-```bash
-ng serve
-```
+Загрузка данных из SWAPI
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Пагинация
 
-## Code scaffolding
+Поиск по имени (с задержкой debounceTime)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Отображение в виде карточек
 
-```bash
-ng generate component component-name
-```
+Адаптивная сетка
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Детальная страница персонажа
 
-```bash
-ng generate --help
-```
+Отображение всех характеристик (рост, масса, пол, год рождения и т.д.)
 
-## Building
+Локальное редактирование всех полей
 
-To build the project run:
+Валидация обязательных значений
 
-```bash
-ng build
-```
+Сохранение в localStorage
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Применение изменений как в детальной карточке, так и в списке персонажей
 
-## Running unit tests
+Локальное состояние
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Для хранения локальных правок используется сервис:
 
-```bash
-ng test
-```
+Сохранение изменений в localStorage
 
-## Running end-to-end tests
+Автоматическая подгрузка при открытии приложения
 
-For end-to-end (e2e) testing, run:
+Мягкое объединение данных API и локальных правок
 
-```bash
-ng e2e
-```
+Signals для реактивности
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+UI и UX
 
-## Additional Resources
+Angular Material (карточки, кнопки, инпуты, форма, пагинация, snackbar)
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Лоадеры при загрузках
+
+Адаптивная верстка
+
+Удобная сетка карточек (2–5 колонок в зависимости от ширины экрана)
+
+Используемые технологии
+
+Angular 21 (standalone components)
+
+RxJS
+
+Signals
+
+Angular Material
+
+TypeScript
+
+SCSS
+
+GitHub Pages Deployment
+
+Установка и запуск
+
+Клонировать проект:
+
+git clone https://github.com/<YOUR_USERNAME>/star-wars-characters.git
+cd star-wars-characters
+
+
+Установить зависимости:
+
+npm install
+
+
+Запустить локальный сервер разработки:
+
+npm start
+
+
+Приложение будет доступно по адресу:
+
+http://localhost:4200/
+
+Сборка проекта
+npm run build
+
+
+Сборка появится в папке:
+
+dist/star-wars-characters/
+
+Деплой (GitHub Pages)
+
+Проект может быть задеплоен через:
+
+ng deploy
+
+
+После деплоя приложение станет доступно по адресу:
+
+https://<YOUR_USERNAME>.github.io/star-wars-characters/
+
+Особенности реализации
+
+Использованы standalone компоненты Angular 21
+
+Signals для хранения локального состояния
+
+Аккуратная работа с Reactivity модели Angular
+
+Управление формами через FormControl
+
+Минимальная нагрузка на API (debounce + умное обновление)
+
+Чистый и понятный код
+
+Полностью типизированный TypeScript
